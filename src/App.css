@@ -1,38 +1,128 @@
-.App {
-  text-align: center;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: Centra;
+    src: url('./assets/font/CentraNo2-Bold.ttf');
+    font-weight: 700;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+    font-family: Centra;
+    src: url('./assets/font/CentraNo2-Medium.ttf');
+    font-weight: 500;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@font-face {
+    font-family: Centra;
+    src: url('./assets/font/CentraNo2-Book.ttf');
+    font-weight: 400;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
 }
 
-.App-link {
-  color: #61dafb;
+body {
+    margin: 0;
+    font-family: 'Centra', sans-serif;
+    overflow-x: hidden;
+    color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.bg-black-gradient {
+    background-color: rgba(57, 57, 59, 1);
+    background-image: linear-gradient(91deg, rgba(57, 57, 59, 1) 0%, rgba(22, 22, 22, 1) 100%);
+}
+
+.bg-primary-gradient {
+    background: linear-gradient(to right, #57234b, #332067);
+}
+
+.slide-open {
+    animation: slide-top 0.3s ease-in-out;
+}
+
+.slide-close {
+    animation: slide-close 0.3s;
+}
+
+.banner.slide {
+    animation: slide 1000ms ease-out;
+}
+
+.banner.pulse {
+    animation: pulse 3000ms ease-in-out infinite;
+}
+
+.krystian {
+    transform: translateX(20px);
+    transition: all 300ms ease-in-out;
+}
+
+.ratajczyk {
+    transform: translateX(-20px);
+    transition: all 300ms ease-in-out;
+}
+
+.logo:hover .krystian {
+    transform: translateX(0);
+}
+
+.logo:hover .ratajczyk {
+    transform: translateX(0);
+}
+
+.skills-info {
+    animation-delay: 100ms;
+}
+
+.skills-info.show {
+    animation: slideFromLeft 700ms ease-in-out;
+}
+
+@keyframes slide-top {
+    0% {
+        transform: translateY(-200%);
+    }
+}
+
+@keyframes slide-close {
+    100% {
+        transform: translateY(-200%);
+        opacity: 0;
+    }
+}
+
+@keyframes slide {
+    0% {
+        transform: translateY(200%)
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: translateY(-5%)
+    }
+
+    50% {
+        transform: translateY(5%)
+    }
+
+    100% {
+        transform: translateY(-5%)
+    }
+}
+
+@keyframes slideFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
