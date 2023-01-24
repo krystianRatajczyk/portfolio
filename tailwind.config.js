@@ -8,10 +8,13 @@ module.exports = {
         primary: "#010001",
         secondary: "#121112",
         gray: "#707070",
+        pink: " #972e77",
+        purple: "#4d29ad",
       },
     },
     screens: {
       xs: "480px",
+      md: "550px",
       ss: "620px",
       sm: "768px",
       md: "1060px",

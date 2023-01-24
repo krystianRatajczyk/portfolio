@@ -50,7 +50,7 @@ function App() {
         <Projects />
       </div>
       <div
-        className={`${styles.flexCenter} bg-primary ${styles.paddingXSection} `}
+        className={`${styles.flexCenter} pink-gradient ${styles.paddingXSection} `}
       >
         <Contact />
       </div>

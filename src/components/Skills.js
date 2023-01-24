@@ -30,7 +30,7 @@ const Skills = () => {
         <img src={afterglow} className="absolute right-0 rotate-180" alt="" />
         <div className="w-[40%] h-full flex items-center flex-col justify-around z-[200]">
           <div
-            className={`skills-info w-[70%]  z-[1000] flex justify-center items-start flex-col ${
+            className={`skills-info w-[70%] z-[1000] flex justify-center items-start flex-col ${
               isVisible ? "show" : ""
             }`}
             ref={skillsRef}
