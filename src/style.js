@@ -32,7 +32,7 @@ export const layout = {
 
 export const elements = {
   sendButton: `self-start ${layout.buttonPadding} ${layout.buttonText} bg-white text-black outline-none
-  border-none text-bold rounded-[20px] `,
+  border-none text-bold rounded-[20px] hover:bg-[#cfd2d4] transition duration-300 hover:text-white`,
   input: `pl-[20px] flex-1 h-[80px] bg-transparent outline-none border border-1 border-white rounded-[20px]
   text-white focus:outline-none focus:border-pink`,
 };

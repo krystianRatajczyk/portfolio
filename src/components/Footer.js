@@ -20,6 +20,7 @@ const Footer = () => {
               return (
                 navLink.name !== "Let's Talk" && (
                   <a
+                    key={`navLink-${navLink.id}`}
                     href={`#${navLink.name.toLocaleLowerCase()}`}
                     className={`text-[#858385] md:text-[20px] font-normal text-[17px]`}
                   >

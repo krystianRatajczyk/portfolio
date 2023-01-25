@@ -80,13 +80,45 @@ body {
 }
 
 .skills-info,
-.contact-img {
+.contact-img,
+.projects {
     animation-delay: 100ms;
 }
 
 .skills-info.show,
 .contact-img.show {
     animation: slideFromLeft 700ms ease-in-out;
+}
+
+.projects.show {
+    animation: slideFromRight 700ms ease-in-out;
+}
+
+.placeholder::placeholder {
+    color: white;
+}
+
+/* .projects-project.image:hover .project-description {
+    animation: slideBottom 300ms ease-in-out;
+    background: #121112;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 10px;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+    height: 125px;
+    border-bottom-left-radius: inherit;
+    border-bottom-right-radius: inherit;
+    color: black;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  } */
+
+.project.gradient {
+    background: linear-gradient(to left, #973d7c, #6242bb);
 }
 
 @keyframes slide-top {
@@ -125,6 +157,17 @@ body {
 @keyframes slideFromLeft {
     0% {
         transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideFromRight{
+    0% {
+        transform: translateX(100%);
         opacity: 0;
     }
 

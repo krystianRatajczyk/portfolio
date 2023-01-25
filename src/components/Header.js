@@ -38,6 +38,7 @@ const Header = () => {
                 navLink.name !== "Let's Talk" && (
                   <a
                     href={`#${navLink.name.toLocaleLowerCase()}`}
+                    key={`navLink-${navLink.id}`}
                     className={`${
                       activeTab === navLink.name ? "text-white" : "text-[#858385]"
                     } md:text-[20px] font-normal text-[17px]`}

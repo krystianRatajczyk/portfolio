@@ -9,7 +9,7 @@ const Contact = () => {
 
   return (
     <div
-      className={`${styles.flexCenter} w-[100vw] h-[100vh]`}
+      className={`${styles.flexCenter} w-[100vw] h-[100vh] ${styles.paddingY} `}
       id="contact"
     >
       <div className="flex w-full h-full md:flex-row flex-col-reverse">
@@ -41,23 +41,23 @@ const Contact = () => {
           ss:mt-0 mt-3"
           >
             <div className="w-full flex gap-[10px] mb-[10px] ss:flex-row flex-col flex-1 ss:flex-none">
-              <input placeholder="First name" className={`${elements.input}`} />
+              <input placeholder="First name" className={`${elements.input} placeholder`} />
               <input
                 placeholder="Second name"
-                className={`${elements.input}`}
+                className={`${elements.input} placeholder`}
               />
             </div>
             <div className="w-full flex gap-[10px] mb-[10px] ss:flex-row flex-col flex-1 ss:flex-none">
-              <input placeholder="Email" className={`${elements.input}`} />
-              <input placeholder="Phone" className={`${elements.input}`} />
+              <input placeholder="Email" className={`${elements.input} placeholder`} />
+              <input placeholder="Phone" className={`${elements.input} placeholder`} />
             </div>
             <textarea
               placeholder="Message"
               className="md:flex-[0.6] ss:flex-[0.8] flex-[1.2] w-full bg-transparent outline-none border rounded-[20px]
-              pl-[20px] text-[25px] text-white leading-[1.4] p-[2%] focus:outline-none focus:border-pink"
+              pl-[20px] text-[25px] text-white leading-[1.4] p-[2%] focus:outline-none focus:border-pink placeholder"
             />
             <button
-              className={`${elements.sendButton} mt-[40px] md:block hidden`}
+              className={`${elements.sendButton} mt-[40px] md:block hidden `}
             >
               Send
             </button>
