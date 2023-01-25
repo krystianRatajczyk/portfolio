@@ -11,16 +11,16 @@ const Header = () => {
 
   return (
     <div className={`w-full flex py-[15px] justify-between items-center `}>
-      <div className="flex md:flex-[40%] flex-[25%] xl:flex-[85%]">
+      <div className="flex xm:flex-[40%] flex-[25%] xl:flex-[85%]">
         {" "}
         {/* className: logo*/}
         <a href="#home">
-          <h2 className="text-white font-bold md:text-[20px] text-[16px]">
+          <h2 className="text-white font-bold xm:text-[20px] text-[16px]">
             {" "}
             {/* className: krystian*/}
             Krystian
           </h2>
-          <h2 className="text-white font-bold md:text-[20px] text-[16px]">
+          <h2 className="text-white font-bold xm:text-[20px] text-[16px]">
             {" "}
             {/* className: ratajczyk*/}
             Ratajczyk
@@ -29,10 +29,10 @@ const Header = () => {
       </div>
 
       <div
-        className={`justify-between items-center sm:flex hidden flex-[75%] md:flex-[60%]`}
+        className={`justify-between items-center sm:flex hidden flex-[75%] xm:flex-[60%]`}
       >
         <div className="flex justify-between align-center flex-[50%]">
-          <div className="flex gap-[40px] md:gap-[70px] items-center">
+          <div className="flex gap-[40px] xm:gap-[70px] items-center">
             {navLinks.map((navLink) => {
               return (
                 navLink.name !== "Let's Talk" && (
@@ -41,7 +41,7 @@ const Header = () => {
                     key={`navLink-${navLink.id}`}
                     className={`${
                       activeTab === navLink.name ? "text-white" : "text-[#858385]"
-                    } md:text-[20px] font-normal text-[17px]`}
+                    } xm:text-[20px] font-normal text-[17px]`}
                     onClick={() => setActiveTab(navLink.name)}
                   >
                     {navLink.name}
@@ -67,7 +67,7 @@ const Header = () => {
           <div className="flex justify-center items-center">
             <a
               href="#contact"
-              className="text-white bg-[#121112] border md:py-[22px] md:px-[25px] 
+              className="text-white bg-[#121112] border xm:py-[22px] xm:px-[25px] 
               py-[18px] px-[20px] hover:bg-[#272727] transition duration-300"
             >
               Let's Talk

@@ -61,7 +61,7 @@ export const aboutContent = {
   Skills: "This is my skills ...",
   Experience: "This is my experience...",
   ExperienceDescription:
-    "This is my experience description...Esse cillum cillum dolor consequat  cillum cillum dolor consequat voluptate dolor labore dolor fugiat ex eaea.",
+    "This is my experience description...Esse cillum cillum dolor consequat",
 };
 
 export const navLinks = [
@@ -82,6 +82,12 @@ export const navLinks = [
     name: "Let's Talk",
     scrollId: "contact",
   },
+];
+
+export const skillsLinks = [
+  { id: 0, name: "Skills" },
+  { id: 1, name: "Experience" },
+  { id: 2, name: "Education" },
 ];
 
 export const socialMedia = [

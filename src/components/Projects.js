@@ -7,20 +7,42 @@ import Project from "./Project";
 
 const Projects = () => {
   const { ref: projectsRef, inView: isVisible } = useInView();
-  const [showMore, setShowMore] = useState(false);
+  const [showMore, setShowMore] = useState(true);
 
+  const renderProjects = () => {
+    return (
+      <div>
+        <div
+          className={`ll:w-[90%] w-full h-full ${styles.paddingY} grid ll:grid-cols-3 ss:grid-cols-2 grid-cols-1 items-center gap-y-[10px] gap-x-[40px] 
+          justify-center ss:hidden`}
+        >
+          {projects.map((project, index) => {
+            if (!showMore && index < 3) {
+              return <Project key={`project-${project.id}`} {...project} />;
+            } else if (showMore) {
+              return <Project key={`project-${project.id}`} {...project} />;
+            }
+          })}
 
-  useEffect(() => {
-    const changeShowMore = () => {
-      if(window.innerWidth >= 620){
-        setShowMore(true)
-      }
-    };
+          <p
+            className="text-right focus:text-gray ss:hidden block"
+            onClick={() => setShowMore((prevState) => !prevState)}
+          >
+            {!showMore ? "Show more" : "Show less"}
+          </p>
+        </div>
 
-    window.addEventListener("resize", changeShowMore);
-
-    return () => window.removeEventListener("resize", changeShowMore);
-  }, []);
+        <div
+          className={`ll:w-[90%] w-full h-full ${styles.paddingY} ss:grid ll:grid-cols-3 ss:grid-cols-2 grid-cols-1 items-center gap-y-[10px] gap-x-[40px] 
+          justify-center hidden`}
+        >
+          {projects.map((project) => {
+            return <Project key={`project-${project.id}`} {...project} />;
+          })}
+        </div>
+      </div>
+    );
+  };
 
   return (
     <div
@@ -29,43 +51,11 @@ const Projects = () => {
     >
       <div className="w-full h-full flex items-center flex-col-reverse mm:flex-row">
         <div className="mm:w-[60%] xs:w-[90%] w-full h-full flex items-center justify-center ">
-          <div
-            className={`ll:w-[90%] w-full h-full ${styles.paddingY} grid ll:grid-cols-3 ss:grid-cols-2 grid-cols-1 items-center gap-y-[10px] gap-x-[40px] 
-          justify-center `}
-          >
-            {projects.map((project, index) => {
-              if (!showMore && index < 3) {
-                return (
-                  <div className="w-full h-full flex flex-col  ll:justify-center justify-start">
-                    <h2 className="mb-[10px] text-[23px] font-bold">
-                      {project.title}
-                    </h2>
-                    <Project key={`project-${project.id}`} {...project} />
-                  </div>
-                );
-              } else if (showMore) {
-                return (
-                  <div className="w-full h-full flex flex-col  ll:justify-center justify-start">
-                    <h2 className="mb-[10px] text-[23px] font-bold">
-                      {project.title}
-                    </h2>
-                    <Project key={`project-${project.id}`} {...project} />
-                  </div>
-                );
-              }
-            })}
-
-            <p
-              className="text-right focus:text-gray ss:hidden block"
-              onClick={() => setShowMore((prevState) => !prevState)}
-            >
-              {!showMore ? "Show more" : "Show less"}
-            </p>
-          </div>
+          {renderProjects()}
         </div>
         <div className="mm:w-[40%] xs:w-[80%] w-full  h-[100%] flex items-center justify-center ">
           <div
-            className={`h-full md:w-[70%] ss:w-[90%] w-full  flex justify-center items-start flex-col projects  ${
+            className={`h-full xm:w-[70%] ss:w-[90%] w-full  flex justify-center items-start flex-col projects  ${
               isVisible ? "show" : ""
             }`}
             ref={projectsRef}

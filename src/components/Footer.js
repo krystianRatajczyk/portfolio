@@ -22,7 +22,7 @@ const Footer = () => {
                   <a
                     key={`navLink-${navLink.id}`}
                     href={`#${navLink.name.toLocaleLowerCase()}`}
-                    className={`text-[#858385] md:text-[20px] font-normal text-[17px]`}
+                    className={`text-[#858385] xm:text-[20px] font-normal text-[17px]`}
                   >
                     {navLink.name}
                   </a>

@@ -25,6 +25,7 @@ function App() {
 
     return () => window.removeEventListener("scroll", changeHeader);
   }, []);
+  
   return (
     <div className="w-full oveflow-hidden">
       <div

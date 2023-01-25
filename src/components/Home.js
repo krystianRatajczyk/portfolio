@@ -25,7 +25,8 @@ const Home = () => {
   }, [currentText, basicText, currentIndex]);
 
   useEffect(() => {
-    if (animationEnded && currentFinishedAnimation === "slide") {
+    console.log(animationEnded, currentFinishedAnimation)
+    if (animationEnded && currentFinishedAnimation === "slideBottom") {
       setAnimationClasses("pulse");
       setAnimationEnded(false);
     }
@@ -34,15 +35,15 @@ const Home = () => {
   return (
     <div
       id="home"
-      className="w-[100vw] h-[100vh] flex items-center justify-center overflow-hidden"
+      className="w-screen h-screen flex items-center justify-center overflow-hidden"
     >
       <img
         src={background}
-        className="w-[100%] h-[calc(100vh)] absolute top-0 left-0 z-[99] object-cover"
+        className="w-[100%] h-screen absolute top-0 left-0 z-[99] object-cover"
         alt=""
       />
-      <div className="w-[90%] h-[60%] z-[500] flex justify-between md:flex-row flex-col items-center">
-        <div className="md:w-[50%] wd:h-[100%] flex flex-col justify-center gap-[24px] w-[90%]">
+      <div className="w-[90%] h-[60%] z-[500] flex justify-between xm:flex-row flex-col items-center">
+        <div className="xm:w-[50%] wd:h-[100%] flex flex-col justify-center gap-[24px] w-[90%]">
           <div className="w-[120px] py-[5px] px-[10px] border bg-primary-gradient">
             <h3 className="text-center  font-bold">Welcome!</h3>
           </div>
@@ -60,10 +61,10 @@ const Home = () => {
             </h4>
           </div>
         </div>
-        <div className="w-[50%] md:h-[100%] h-[50%] sm:h-[70%] flex justify-center items-center md:mt-0 mt-4">
+        <div className="w-[50%] xm:h-[100%] h-[50%] sm:h-[70%] flex justify-center items-center xm:mt-0 mt-4">
           <img
             src={banner}
-            className={`h-[90%] ${animationClasses} banner`}
+            className={`h-[90%] banner ${animationClasses} `}
             alt={""}
             onAnimationEndCapture={(animation) => {
               setAnimationEnded(true);

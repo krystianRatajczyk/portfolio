@@ -12,16 +12,16 @@ const Contact = () => {
       className={`${styles.flexCenter} w-[100vw] h-[100vh] ${styles.paddingY} `}
       id="contact"
     >
-      <div className="flex w-full h-full md:flex-row flex-col-reverse">
+      <div className="flex w-full h-full xm:flex-row flex-col-reverse">
         <div
-          className="ss:w-full md:w-[30%] lg:w-[40%] sm:h-[30%] h-[30%] md:h-full 
+          className="ss:w-full xm:w-[30%] lg:w-[40%] sm:h-[30%] h-[30%] xm:h-full 
         flex px-[40px] ss:justify-between justify-center items-start"
         >
-          <div className="ss:block md:hidden hidden">
+          <div className="ss:block xm:hidden hidden">
             <button className={`${elements.sendButton} `}>Send</button>
           </div>
           <div
-            className={`self-center flex items-center justify-center md:h-full h-[80%] contact-img ${
+            className={`self-center flex items-center justify-center xm:h-full h-[80%] contact-img ${
               isVisible ? "show" : ""
             } `}
             ref={contactRef}
@@ -32,12 +32,12 @@ const Contact = () => {
         <div className=" xs:w-[90%] w-full self-center ss:hidden">
           <button className={`${elements.sendButton} w-full xs:mt-0 mt-1.5`}>Send</button>
         </div>
-        <div className="flex-1 lg:w-[60%] h-[70%] md:h-full flex items-center justify-center flex-col">
+        <div className="flex-1 lg:w-[60%] h-[70%] xm:h-full flex items-center justify-center flex-col">
           <h2 className="lg:text-[80px] ss:text-[60px] text-[40px] text-left w-[80%] font-bold leading-[1]">
             Contact with me
           </h2>
           <div
-            className="lg:w-[80%] xs:w-[90%] w-full md:h-[70%] h-[80%] flex items-center justify-center flex-col 
+            className="lg:w-[80%] xs:w-[90%] w-full xm:h-[70%] h-[80%] flex items-center justify-center flex-col 
           ss:mt-0 mt-3"
           >
             <div className="w-full flex gap-[10px] mb-[10px] ss:flex-row flex-col flex-1 ss:flex-none">
@@ -53,11 +53,11 @@ const Contact = () => {
             </div>
             <textarea
               placeholder="Message"
-              className="md:flex-[0.6] ss:flex-[0.8] flex-[1.2] w-full bg-transparent outline-none border rounded-[20px]
+              className="xm:flex-[0.6] ss:flex-[0.8] flex-[1.2] w-full bg-transparent outline-none border rounded-[20px]
               pl-[20px] text-[25px] text-white leading-[1.4] p-[2%] focus:outline-none focus:border-pink placeholder"
             />
             <button
-              className={`${elements.sendButton} mt-[40px] md:block hidden `}
+              className={`${elements.sendButton} mt-[40px] xm:block hidden `}
             >
               Send
             </button>
